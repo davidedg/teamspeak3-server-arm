@@ -1,6 +1,6 @@
 #!/bin/sh
 #Check internet connectivity
-if !(ping -q -c 1 -W 1 teamspeak.com > /dev/null)
+if !(curl -s --head --fail https://teamspeak.com > /dev/null)
 then
     echo "Internet connectivity check failed!"
     return
