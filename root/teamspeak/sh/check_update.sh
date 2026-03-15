@@ -1,6 +1,6 @@
 #!/bin/sh
 #Check internet connectivity
-if !(curl -s --head --fail https://teamspeak.com > /dev/null)
+if !(curl --connect-timeout 1 -s --head --fail https://teamspeak.com > /dev/null)
 then
     echo "Internet connectivity check failed!"
     return
